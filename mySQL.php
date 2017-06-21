@@ -1,4 +1,7 @@
 <?php
+
+include "../dbConnect.php";
+
 // database functions ************************************************
 
 function fInsertToDatabase() {
@@ -16,3 +19,4 @@ function fListFromDatabase() {
   // TODO: Fill in the rest of the fuction
 }
 ?>
+
