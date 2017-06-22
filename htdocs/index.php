@@ -16,8 +16,11 @@ $lname2 = 'Pine';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
-fListFromDatabase($myDBConnection);
+fListMoviesFromDatabase($myDBConnection);
+fListActorsFromDatabase($myDBConnection);
 fDeleteMovieFromDatabase($myDBConnection, $asin);
+fDeleteActorFromDatabase($myDBConnection, 1);
+fDeleteActorFromDatabase($myDBConnection, 2);
 
 
     // Doctor Who
@@ -32,8 +35,12 @@ $lname2 = 'Piper';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
-fListFromDatabase($myDBConnection);
+fListMoviesFromDatabase($myDBConnection);
+fListActorsFromDatabase($myDBConnection);
 fDeleteMovieFromDatabase($myDBConnection, $asin);
+fDeleteActorFromDatabase($myDBConnection, 3);
+fDeleteActorFromDatabase($myDBConnection, 4);
+
 
     // Pride and Prejudice
 $asin = 'B000E1ZBGS';
@@ -47,8 +54,11 @@ $lname2 = 'Macfadyen';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
-fListFromDatabase($myDBConnection);
+fListMoviesFromDatabase($myDBConnection);
+fListActorsFromDatabase($myDBConnection);
 fDeleteMovieFromDatabase($myDBConnection, $asin);
+fDeleteActorFromDatabase($myDBConnection, 5);
+fDeleteActorFromDatabase($myDBConnection, 6);
 
     // Bride and Prejudice
 $asin = 'B00094AS9U';
@@ -62,8 +72,11 @@ $lname2 = 'Henderson';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
-fListFromDatabase($myDBConnection);
+fListMoviesFromDatabase($myDBConnection);
+fListActorsFromDatabase($myDBConnection);
 fDeleteMovieFromDatabase($myDBConnection, $asin);
+fDeleteActorFromDatabase($myDBConnection, 7);
+fDeleteActorFromDatabase($myDBConnection, 8);
 
     // Lego Batman
 $asin = 'B06XJKXY4R';
@@ -77,8 +90,11 @@ $lname2 = 'Galifianakis';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
-fListFromDatabase($myDBConnection);
+fListMoviesFromDatabase($myDBConnection);
+fListActorsFromDatabase($myDBConnection);
 fDeleteMovieFromDatabase($myDBConnection, $asin);
+fDeleteActorFromDatabase($myDBConnection, 9);
+fDeleteActorFromDatabase($myDBConnection, 10);
 
 
 
