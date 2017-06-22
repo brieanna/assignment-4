@@ -12,10 +12,14 @@ function fInsertMovieToDatabase($myDB, $asin, $title, $price) {
   $sql->bindParam(":price", $price);
   $sql->execute();
   echo '<img src=' . $image . '>';
+  echo $title . ':  $' . $price;
 }
 
 function fInsertActorToDatabase($myDB, $fname, $lname){
-
+    $sql = $myDB->prepare("INSERT INTO dvdActors (fname, lname) VALUES (:fname, :lname)");
+    $sql->bindParam(":fname", $fname);
+    $sql->bindParam(":lname", $lname);
+    $sql->execute();
 }
 
 function fDeleteMovieFromDatabase($myDB, $asin) {
@@ -27,9 +31,9 @@ function fDeleteMovieFromDatabase($myDB, $asin) {
 
 function fListFromDatabase($myDB) {
   $sql = $myDB->prepare("SELECT asin, title , price FROM dvdtitles ORDER BY title");
-  $info = $sql->execute();
-echo $info;
-  print_r($info);
+  $sql->execute();
+//echo $info;
+//print_r($info);
 }
 ?>
 
