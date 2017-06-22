@@ -11,7 +11,7 @@ function fInsertMovieToDatabase($myDB, $asin, $title, $price) {
   $sql->bindParam(":title", $title);
   $sql->bindParam(":price", $price);
   $sql->execute();
-  echo '<img src=' . $image . '>';
+  echo '<br><img src=' . $image . '>';
 //  echo '<br>Movie: ' . $title . ':  $' . $price;
 }
 
@@ -54,7 +54,14 @@ function fListActorsFromDatabase($myDB){
         echo '<br>'.$row['fname'].' ';
         echo $row['lname'];
     }
-    echo '<br>';
+}
+
+function fGetActorID($myDB){
+    $sql = $myDB->prepare("SELECT actorID FROM dvdActors");
+    $sql->execute();
+    $row = $sql->fetch();
+    $result = $row['actorID'];
+    return $result;
 }
 ?>
 

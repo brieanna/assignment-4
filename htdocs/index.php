@@ -14,13 +14,15 @@ $fname2 = 'Chris';
 $lname2 = 'Pine';
 
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
-fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListMoviesFromDatabase($myDBConnection);
+fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
+fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-fDeleteActorFromDatabase($myDBConnection, 1);
-fDeleteActorFromDatabase($myDBConnection, 2);
+
 
 
     // Doctor Who
@@ -33,13 +35,14 @@ $fname2 = 'Billie';
 $lname2 = 'Piper';
 
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
-fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListMoviesFromDatabase($myDBConnection);
+fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
+fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-fDeleteActorFromDatabase($myDBConnection, 3);
-fDeleteActorFromDatabase($myDBConnection, 4);
 
 
     // Pride and Prejudice
@@ -52,13 +55,14 @@ $fname2 = 'Matthew';
 $lname2 = 'Macfadyen';
 
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
-fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListMoviesFromDatabase($myDBConnection);
+fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
+fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-fDeleteActorFromDatabase($myDBConnection, 5);
-fDeleteActorFromDatabase($myDBConnection, 6);
 
     // Bride and Prejudice
 $asin = 'B00094AS9U';
@@ -70,13 +74,14 @@ $fname2 = 'Martin';
 $lname2 = 'Henderson';
 
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
-fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListMoviesFromDatabase($myDBConnection);
+fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
+fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-fDeleteActorFromDatabase($myDBConnection, 7);
-fDeleteActorFromDatabase($myDBConnection, 8);
 
     // Lego Batman
 $asin = 'B06XJKXY4R';
@@ -88,13 +93,14 @@ $fname2 = 'Zach';
 $lname2 = 'Galifianakis';
 
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
-fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListMoviesFromDatabase($myDBConnection);
+fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
 fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
+fListActorsFromDatabase($myDBConnection);
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-fDeleteActorFromDatabase($myDBConnection, 9);
-fDeleteActorFromDatabase($myDBConnection, 10);
 
 
 
