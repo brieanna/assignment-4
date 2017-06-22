@@ -12,7 +12,7 @@ function fInsertMovieToDatabase($myDB, $asin, $title, $price) {
   $sql->bindParam(":price", $price);
   $sql->execute();
   echo '<img src=' . $image . '>';
-  echo '<br>Movie: ' . $title . ':  $' . $price;
+//  echo '<br>Movie: ' . $title . ':  $' . $price;
 }
 
 function fInsertActorToDatabase($myDB, $fname, $lname){
@@ -20,7 +20,7 @@ function fInsertActorToDatabase($myDB, $fname, $lname){
     $sql->bindParam(":fname", $fname);
     $sql->bindParam(":lname", $lname);
     $sql->execute();
-    echo '<br>Actor: '.$lname . ', ' . $fname;
+//    echo '<br>Actor: '.$lname . ', ' . $fname;
 }
 
 function fDeleteMovieFromDatabase($myDB, $asin) {
@@ -39,13 +39,21 @@ function fListMoviesFromDatabase($myDB) {
   $sql = $myDB->prepare("SELECT asin, title , price FROM dvdtitles ORDER BY title");
   $sql->execute();
 
-//echo $info;
-//print_r($info);
+  while( $row = $sql->fetch()) {
+//      echo '<br>'.$row['asin']. ' ';
+      echo '<br>'.$row['title']. ' $';
+      echo $row['price'];
+  }
+
 }
 
 function fListActorsFromDatabase($myDB){
     $sql = $myDB->prepare("SELECT fname, lname FROM dvdActors ORDER BY lname");
     $sql->execute();
+    while($row = $sql->fetch()){
+        echo '<br>'.$row['fname'].' ';
+        echo $row['lname'];
+    }
     echo '<br>';
 }
 ?>
