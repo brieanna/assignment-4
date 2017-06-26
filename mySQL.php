@@ -23,6 +23,12 @@ function fInsertActorToDatabase($myDB, $fname, $lname){
 //    echo '<br>Actor: '.$lname . ', ' . $fname;
 }
 
+function fInsertMovieActorRelation($myDB, $asin, $actorID){
+    $sql = $myDB->prepare("INSERT INTO movieActorRelation (asin, actorID) VALUES (:asin, :actorID)");
+    $sql->bindParam(":asin, $asin");
+    $sql->bindParam(":actorID, $actorID");
+}
+
 function fDeleteMovieFromDatabase($myDB, $asin) {
   $sql = $myDB->prepare("DELETE FROM dvdtitles WHERE asin=:asin");
   $sql->bindParam(":asin", $asin);
