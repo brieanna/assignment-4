@@ -30,13 +30,20 @@ function fInsertMovieActorRelation($myDB, $asin, $actorID){
 }
 
 function fDeleteMovieFromDatabase($myDB, $asin) {
-  $sql = $myDB->prepare("DELETE FROM dvdtitles WHERE asin=:asin");
+  $sql = $myDB->prepare("DELETE FROM dvdtitles WHERE asin = :asin");
   $sql->bindParam(":asin", $asin);
   $sql->execute();
 }
 
 function fDeleteActorFromDatabase($myDB, $actorID){
     $sql = $myDB->prepare("DELETE FROM dvdActors WHERE actorID = :actorID");
+    $sql->bindParam(":actorID", $actorID);
+    $sql->execute();
+}
+
+function fDeleteMovieActorRelation($myDB, $asin, $actorID){
+    $sql = $myDB->prepare("DELETE FROM movieActorRelation WHERE asin = :asin AND actorID = :actorID");
+    $sql->bindParam(":asin", $asin);
     $sql->bindParam(":actorID", $actorID);
     $sql->execute();
 }
@@ -67,6 +74,16 @@ function fGetActorID($myDB){
     $sql->execute();
     $row = $sql->fetch();
     $result = $row['actorID'];
+    return $result;
+}
+
+function fJoinTables($myDB){
+    $sql = $myDB->prepare("SELECT * FROM movieActorRelation 
+                            JOIN dvdTitles on dvdTitles.asin = movieActorRelation.asin 
+                            JOIN dvdActors on dvdActors.actorID = movieActorRelation.actorID");
+    $sql->execute();
+    $row = $sql->fetch();
+    $result = $row['movieActorRelation'];
     return $result;
 }
 ?>
