@@ -11,7 +11,7 @@ function fInsertMovieToDatabase($myDB, $asin, $title, $price) {
   $sql->bindParam(":title", $title);
   $sql->bindParam(":price", $price);
   $sql->execute();
-  echo '<br><img src=' . $image . '>';
+  echo '<br><br><img src=' . $image . '>';
 //  echo '<br>Movie: ' . $title . ':  $' . $price;
 }
 
@@ -25,8 +25,9 @@ function fInsertActorToDatabase($myDB, $fname, $lname){
 
 function fInsertMovieActorRelation($myDB, $asin, $actorID){
     $sql = $myDB->prepare("INSERT INTO movieActorRelation (asin, actorID) VALUES (:asin, :actorID)");
-    $sql->bindParam(":asin, $asin");
-    $sql->bindParam(":actorID, $actorID");
+    $sql->bindParam(":asin", $asin);
+    $sql->bindParam(":actorID", $actorID);
+    $sql->execute();
 }
 
 function fDeleteMovieFromDatabase($myDB, $asin) {
@@ -69,8 +70,10 @@ function fListActorsFromDatabase($myDB){
     }
 }
 
-function fGetActorID($myDB){
-    $sql = $myDB->prepare("SELECT actorID FROM dvdActors");
+function fGetActorID($myDB, $fname, $lname){
+    $sql = $myDB->prepare("SELECT actorID FROM dvdActors WHERE fname = :fname AND lname = :lname");
+    $sql->bindParam(":fname", $fname);
+    $sql->bindParam(":lname", $lname);
     $sql->execute();
     $row = $sql->fetch();
     $result = $row['actorID'];
@@ -82,9 +85,14 @@ function fJoinTables($myDB){
                             JOIN dvdTitles on dvdTitles.asin = movieActorRelation.asin 
                             JOIN dvdActors on dvdActors.actorID = movieActorRelation.actorID");
     $sql->execute();
-    $row = $sql->fetch();
-    $result = $row['movieActorRelation'];
-    return $result;
+    while($row = $sql->fetch()){
+        echo '<br>'.$row['title'];
+        echo ': $'.$row['price'];
+        echo '<br>'.$row['fname'];
+        echo ' '.$row['lname'];
+        echo '  ActorID: '.$row['actorID'];
+        echo '<br>ASIN: '.$row['asin'];
+    }
 }
 ?>
 

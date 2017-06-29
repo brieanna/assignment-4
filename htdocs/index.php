@@ -16,11 +16,15 @@ $lname2 = 'Pine';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fListMoviesFromDatabase($myDBConnection);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname1, $lname1));
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname2, $lname2));
+fJoinTables($myDBConnection);
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname2, $lname2));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname2, $lname2));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
 
 
@@ -37,13 +41,16 @@ $lname2 = 'Piper';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fListMoviesFromDatabase($myDBConnection);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname1, $lname1));
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname2, $lname2));
+fJoinTables($myDBConnection);
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname2, $lname2));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname2, $lname2));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-
 
     // Pride and Prejudice
 $asin = 'B000E1ZBGS';
@@ -57,11 +64,15 @@ $lname2 = 'Macfadyen';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fListMoviesFromDatabase($myDBConnection);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname1, $lname1));
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname2, $lname2));
+fJoinTables($myDBConnection);
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname2, $lname2));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname2, $lname2));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
 
     // Bride and Prejudice
@@ -76,11 +87,15 @@ $lname2 = 'Henderson';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fListMoviesFromDatabase($myDBConnection);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname1, $lname1));
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname2, $lname2));
+fJoinTables($myDBConnection);
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname2, $lname2));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname2, $lname2));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
 
     // Lego Batman
@@ -95,13 +110,16 @@ $lname2 = 'Galifianakis';
 fInsertMovieToDatabase($myDBConnection, $asin, $title, $price);
 fListMoviesFromDatabase($myDBConnection);
 fInsertActorToDatabase($myDBConnection, $fname1, $lname1);
-fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname1, $lname1));
 fInsertActorToDatabase($myDBConnection, $fname2, $lname2);
 fListActorsFromDatabase($myDBConnection);
-fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection));
+fInsertMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection,$fname2, $lname2));
+fJoinTables($myDBConnection);
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteMovieActorRelation($myDBConnection, $asin, fGetActorID($myDBConnection, $fname2, $lname2));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname1, $lname1));
+fDeleteActorFromDatabase($myDBConnection, fGetActorID($myDBConnection, $fname2, $lname2));
 fDeleteMovieFromDatabase($myDBConnection, $asin);
-
 
 
 
